@@ -1,0 +1,79 @@
+METHOD CreateForm( lCreate ) CLASS TForm1
+
+   IF lCreate
+      ::SetBounds( 558, 173, 588, 546 )
+      ::SetClientSize( 572, 507 )
+      ::cText := "Form1"
+      ::oFont := TFont():Create( "MS Sans Serif", 8, 0, 400 )
+      ::OnInitialize := "Init"
+      ::Create()
+   ENDIF
+   ::Super:CreateForm( .F. )
+
+   WITH OBJECT ::oCdxDataSource1 := TCdxDataSource():New( Self )
+      :cConnect := ""
+      :Create()
+   END
+
+   WITH OBJECT ::oDbfDataSet1 := TDbfDataSet():New( Self )
+      :cName := "Blob_B32.dbf"
+      :oDataSource := ::oCdxDataSource1
+      :cProcess := "GENERAL"
+      :lOpen := .T.
+      :OnCreate := "CheckFiles"
+      :Create()
+   END
+
+   WITH OBJECT ::oImage1 := TImage():New( Self )
+      :SetBounds( 28, 8, 518, 206 )
+      :lAutoFit := .T.
+      :OnMouseMove := "ShowImage"
+      :Create()
+   END
+
+   WITH OBJECT ::oDBBrowse1 := TDBBrowse():New( Self )
+      :SetBounds( 32, 280, 514, 214 )
+      WITH OBJECT TDBBrwColumn():New( ::oDBBrowse1 )
+         :cHeader := "FILE"
+         :nWidth := 115
+         :oDataField := "FILE"
+         :Create()
+      END
+
+      TBrwRecSel():Create( ::oDBBrowse1 )
+
+      :oDataSet := ::oDbfDataSet1
+      :OnChange := "SkipRec"
+      :Create()
+   END
+
+   WITH OBJECT ::oDBEdit1 := TDBEdit():New( Self )
+      :SetBounds( 28, 232, 222, 20 )
+      :nMaxLength := 30
+      :oDataSet := ::oDbfDataSet1
+      :oDataField := "FILE"
+      :Create()
+   END
+
+   WITH OBJECT ::oBtnEdit := TButton():New( Self )
+      :SetBounds( 366, 228, 80, 25 )
+      :cText := "Bearbeiten"
+      :OnClick := "RecEdit"
+      :Create()
+   END
+
+   WITH OBJECT ::oBtnLoadPicture := TButton():New( Self )
+      :SetBounds( 264, 228, 80, 25 )
+      :cText := "Bild laden"
+      :OnClick := "LoadPicture"
+      :Create()
+   END
+
+   WITH OBJECT ::oBtnNew := TButton():New( Self )
+      :SetBounds( 468, 228, 80, 25 )
+      :cText := "Neu"
+      :OnClick := "RecNew"
+      :Create()
+   END
+
+RETURN Self

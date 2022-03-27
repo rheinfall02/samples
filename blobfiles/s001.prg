@@ -10,8 +10,9 @@
  * Visit us at https://github.com/oohg/samples
  */
 
-#include "oohg.ch"
-#include "blob.ch"
+//#include "oohg.ch"
+//#include "blob.ch"
+#include "hmg.ch"
 
 FUNCTION Main
 

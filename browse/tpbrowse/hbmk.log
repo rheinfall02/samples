@@ -1,0 +1,5 @@
+Harbour 3.2.0dev (r1703241902)
+Copyright (c) 1999-2016, http://harbour-project.org/
+C:\Users\felix\OneDrive\Dokumente\GitHub\samples\browse\tpbrowse\sample.prg(5) Error F0029  Can't open #include file 'oohg.ch'
+hbmk2[sample]: Error: Running Harbour compiler (embedded). 1
+(C:\hmg.3.4.4\harbour\bin\harbour.exe) -n2 C:\Users\felix\OneDrive\Dokumente\GitHub\samples\browse\tpbrowse\sample.prg C:\Users\felix\OneDrive\Dokumente\GitHub\samples\browse\tpbrowse\h_pbrowse.prg -DHBMK_HAS_HMG32=1 -q -DHBMK_HAS_SAMPLE=1 -oC:\Users\felix\AppData\Local\Temp\hbmk_1ysqe0.dir\ -iC:\hmg.3.4.4\harbour\include -i. -iC:\hmg.3.4.4\include

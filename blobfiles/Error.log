@@ -1,0 +1,37 @@
+******************************* Fehlerprotokoll *******************************
+
+             Exe: C:\Users\felix\OneDrive\Dokumente\GitHub\samples\blobfiles\XailerBlob.exe
+         Version: 1.0.0.0
+       User name: felix
+   Computer name: MY5540
+               Datum: 02/10/21
+                Zeit: 16:05:33
+Verfügbarer Speicher: 2097151
+    Akueller Bereich: 1
+
+---------------------------- Compiler-Information -----------------------------
+
+      Xailer-Version: Xailer 6.2.0
+            Compiler: Harbour 3.2.0dev (r1803161710) 
+      C/C++-Compiler: MinGW GNU C 7.3 (32-bit)
+   Windows-Plattform: Windows 10 10.0
+
+---------------- Information über die interne Fehlerbehandlung ----------------
+
+   Untersystemaufruf: BASE
+          Systemcode: 1004
+      Default-Status: .F.
+        Beschreibung: Message not found
+           Operation: TDbfDataSet:BLOB_MEMO
+           Argumente:  [ 1] = Typ: N Wert: 0
+ Involvierte Dateien: 
+      DOS-Fehlercode: 0
+
+Aufgerufene Programmteile:
+  TDBFDATASET:BLOB_MEMO (2176)
+  TFORM1:SHOWIMAGE (65)
+  TFORM1:INIT (50)
+  TFORM1:ONINITIALIZE (0)
+  TFORM1:NEW (204)
+  MAIN (14)
+
